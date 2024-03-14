@@ -1,0 +1,38 @@
+|ID| .level1 {
+	position: relative !important;
+	vertical-align: top;
+}
+
+|ID| .level1 > a span.titreck {
+	position: relative !important;
+	overflow: hidden;
+}
+
+|ID| .level1:before,
+|ID| .level1 > a span.titreck:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	padding: inherit;
+	max-width: 0;
+	color: #fff;
+	content: attr(data-hover);
+	-webkit-transition: max-width 0.5s;
+	-moz-transition: max-width 0.5s;
+	transition: max-width 0.5s;
+}
+
+|ID| .level1:before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	border-bottom: 2px solid #fff;
+}
+
+|ID| .level1:hover > a span.titreck:before,
+|ID| .level1:focus> a span.titreck:before,
+|ID| .level1:hover:before,
+|ID| .level1:focus:before {
+	max-width: 100%;
+}

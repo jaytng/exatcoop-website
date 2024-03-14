@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<updates>
+	<update>
+		<name><![CDATA[ Phoca Top Menu Module ]]></name>
+		<description><![CDATA[ Phoca Top Menu Module - a Joomla! CMS module which displays horizontal top menu in Joomla! administration. ]]></description>
+		<element>mod_phocatopmenu</element>
+		<type>module</type>
+		<version>4.0.14</version>
+		<infourl title="Phoca Top Menu Module 4.0.14">https://www.phoca.cz/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaTopMenuModule/releases/download/4.0.14/mod_phocatopmenu_v4.0.14.zip</downloadurl>
+		</downloads>
+		<sha512>c033a34ecbe08e47b398c8ece834f9473848ba3688a82cfef331cd1c1f7843720424f83c63e538142d729e86dfb78a4d4abae524750756d6f6d86c1fd8345dbc</sha512>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
+		<maintainerurl>https://www.phoca.cz/</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="4\.*"/>
+		<client>administrator</client>
+	</update>
+	<update>
+		<name><![CDATA[ Phoca Top Menu Module ]]></name>
+		<description><![CDATA[ Phoca Top Menu Module - a Joomla! CMS module which displays horizontal top menu in Joomla! administration. ]]></description>
+		<element>mod_phocatopmenu</element>
+		<type>module</type>
+		<version>5.0.0</version>
+		<infourl title="Phoca Top Menu Module 5.0.0">https://www.phoca.cz/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaTopMenuModule/releases/download/5.0.0/mod_phocatopmenu_v5.0.0.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
+		<maintainerurl>https://www.phoca.cz/</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="(4|5)\.*"/>
+		<client>administrator</client>
+	</update>
+</updates>

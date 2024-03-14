@@ -1,0 +1,45 @@
+|ID| .level1 {
+	vertical-align: top;
+	position: relative !important;
+	z-index: 1;
+	overflow: hidden;
+}
+
+|ID| .level1 > a {
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+|ID| .level1 > a:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;;
+	width: 100%;
+	height: 100%;
+	padding: inherit;
+	background: #fff;
+	color: #0f7c67;
+	content: attr(data-hover);
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        box-sizing: border-box;
+}
+
+|ID| .level1:hover > a,
+|ID| .level1:focus > a {
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+|ID| .level1:hover > a:before,
+|ID| .level1:focus > a:before {
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	transform: translateX(-100%);
+}

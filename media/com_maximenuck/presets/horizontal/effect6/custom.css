@@ -1,0 +1,39 @@
+|ID| .level1 {
+	position: relative !important;
+	vertical-align: top;
+}
+
+|ID| .level1::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	content: '';
+	-webkit-transition: top 0.3s;
+	-moz-transition: top 0.3s;
+	transition: top 0.3s;
+}
+
+|ID| .level1::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 2px;
+	background: #fff;
+	content: '';
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	transition: height 0.3s;
+}
+
+|ID| .level1:hover::before {
+	top: 100%;
+	opacity: 1;
+}
+
+|ID| .level1:hover::after {
+	height: 100%;
+} 

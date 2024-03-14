@@ -1,0 +1,14 @@
+|ID| .level1 > a span.titreck {
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	display: block;
+}
+
+|ID| .level1:hover > a span.titreck,
+|ID| .level1:focus > a span.titreck{
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0.9;
+}

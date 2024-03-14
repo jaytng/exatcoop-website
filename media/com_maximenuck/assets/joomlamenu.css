@@ -1,0 +1,339 @@
+/**
+ * @copyright	Copyright (C) 2019. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @author		Cedric Keiflin - https://www.template-creator.com - https://www.joomlack.fr
+ */
+
+body {
+	font-size: 14px;
+	font-family: Segoe UI, Verdana;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#adminForm {
+	padding: 10px;
+}
+
+#ckmessage {
+	float: left;
+	margin: 10px 10px 0;
+	max-width: 100%;
+	min-height: 60px;
+	overflow: hidden;
+}
+
+#ckwaitoverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	min-width: 220px;
+	min-height: 220px;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#ckwaitoverlay:after {
+	display: block;
+	content: "\f110";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 150px;
+	height: 150px;
+	width: 150px;
+	line-height: 150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -75px 0 0 -75px;
+	animation: fa-spin 2s infinite linear;
+}
+
+/*------------------------------------
+	For Sortable elements
+---------------------------------------*/
+
+.ckmenuselectsortable  li {
+	display: block !important;
+}
+
+.placeholder {
+	outline: 1px dashed #4183C4;
+}
+
+.mjs-nestedSortable-error {
+	background: #fbe3e4;
+	border-color: transparent;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+	padding-left: 30px;
+}
+
+ol.sortable, ol.sortable ol {
+	margin: 0 0 0 25px;
+	padding: 0;
+	list-style-type: none;
+}
+
+ol.sortable {
+	margin: 0;
+}
+
+.sortable li {
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+/*.sortable li  > div.itemwrapper > div > .icon-move {
+	font-size: 20px;
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 0;
+	padding: 3px 3px 0;
+	vertical-align: middle;
+	width: 20px;
+	cursor: move;
+}*/
+
+.sortable li  > div.itemwrapper  {
+	border: 1px solid #d4d4d4;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+	padding: 5px;
+	margin: 0;
+	/*cursor: move;*/
+	background: #f6f6f6;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+}
+
+.sortable li.mjs-nestedSortable-branch > div.itemwrapper {
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #f0ece9 100%);
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#f0ece9 100%);
+
+}
+
+.sortable li.mjs-nestedSortable-leaf > div.itemwrapper {
+
+}
+
+li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div.itemwrapper {
+	border-color: #999;
+	background: #fafafa;
+}
+
+.disclose {
+	display: inline-block;
+	float: left;
+	cursor: pointer;
+	width: 20px;
+	/*font-weight: bold;*/
+	font-size: 25px;
+	padding: 2px 4px;
+	margin-left: -5px;
+	text-align: center;
+	line-height: 28px;
+	color: #000;
+}
+
+.sortable li.mjs-nestedSortable-collapsed > ol {
+	display: none;
+}
+
+.sortable li.mjs-nestedSortable-branch > div.itemwrapper > .disclose {
+	display: inline-block;
+}
+
+.disclose > span:before {
+	content: '  ';
+	display: block;
+}
+
+.sortable li.mjs-nestedSortable-collapsed > div.itemwrapper > .disclose > span:before {
+	content: '+ ';
+}
+
+.sortable li.mjs-nestedSortable-expanded > div.itemwrapper > .disclose > span:before {
+	content: '- ';
+}
+
+#sortable  {
+	min-height: 50px;
+}
+
+#sortable span.small {
+	padding: 0 5px;
+}
+
+.itemtoggler i {
+	-webkit-transition: -webkit-transform 0.8s ease;
+	-moz-transition: -moz-transform 0.8s ease;
+	-ms-transition: -ms-transform 0.8s ease;
+	-o-transition: -o-transform 0.8s ease;
+	transition: transform 0.8s ease;
+}
+
+.itemtoggler.opened i {
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg); 
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+	transform: rotate(60deg);
+}
+
+.createcolumn ~ .colwidth {
+	display: none;
+}
+
+.createcolumn.active ~ .colwidth {
+	display: inline-block;
+}
+
+.togglemobileoptions .ckbutton {
+	position: relative;
+}
+
+.togglemobileoptions .fa-times {
+	color:red;
+	position: absolute;
+	font-size: 10px;
+	margin: 6px 0 0 6px;
+	left: 7.5px;
+	display: none;
+	top: 3px;
+}
+
+.togglemobileoptions .disable .fa-times {
+	display: inline-block;
+}
+
+.ckaction {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+}
+
+.itemwrapper > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.itemwrapper .ckbutton {
+    min-width: 35px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 17px;
+    vertical-align: top;
+    padding: 8px;
+}
+
+.ckmove {
+	cursor: move;
+	/*float: left;*/
+	text-align: center;
+	line-height: 20px;
+	padding-top: 8px;
+	font-size: 16px;
+}
+
+.submenuwidthbuttons a {
+	color: cornflowerblue;
+}
+
+.imageselect.active,
+.moduleselect.active,
+.iconselect.active {
+	color: brown;
+}
+
+.columnbuttons a {
+    color: darkcyan;
+}
+
+.togglemobileoptions span {
+    color: blueviolet;
+}
+
+.ckid {
+	margin-left: auto;
+	line-height: 30px;
+}
+
+.ckstatus[data-state="1"] {
+	color: green;
+}
+
+.ckstatus[data-state="0"] {
+	color: red;
+}
+
+.ckdescfield > input[type="text"] {
+	height: 35px;
+	margin: 0;
+}
+
+.cktitle {
+	margin: 5px 0 0 5px;
+	min-width: 150px;
+}
+
+.cktitle input[type="text"] {
+	margin: -5px 0 0 0;
+	height: 35px;
+}
+
+.cktitle + .ckbutton-group {
+	margin-left: -3px;
+	margin-right: 2px;
+}
+
+.checkedouticon i {
+	color: orange;
+}
+
+.createcolumn.active,
+.createcolumn.active + .colwidth,
+.createnewrow.active {
+	background-color: darkcyan;
+	color: white;
+}
+
+.createcolumn.active + .colwidth  {
+	font-size: 13px;
+	padding-top: 1px;
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	/*border-color: #15497c #15497c #0a223b;*/
+}
+
+.valuetxt,
+.modulename {
+	line-height: 1;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.ckhastext .valuetxt,
+.ckhastext .modulename {
+	padding: 0 0 0 5px;
+}
+
+.cktip-img-preview {
+	max-width: 100%;
+	max-height: 150px;
+}

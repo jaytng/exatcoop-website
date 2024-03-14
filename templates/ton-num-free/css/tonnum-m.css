@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+/* เมื่อความกว้างต่ำกว่า 1360px max*/
+@media screen and (max-width: 1360px) {
+
+}
+/* เมื่อความกว้างต่ำกว่า 1024px max*/
+@media screen and (max-width: 1024px) {
+
+	.favth-carousel-caption h3 { font-size:2em !important ;}
+	.favslider-caption-description { font-size:16px !important;}
+	
+}
+
+/* เมื่อความกว้างต่ำกว่า 768px max*/
+@media screen and (max-width: 768px) {
+	#logo{ text-align:center;}
+	#banner img{ text-align:center !important; margin:0 auto 0 auto; display:block;   }
+}
+/* เมื่อความกว้างต่ำกว่า 500px max*/
+@media screen and (max-width: 480px) {
+
+	#social { text-align:center; padding-top:10px;}
+	.favth-carousel-caption h3 { font-size:1.4em !important ;}
+	.favslider-caption-description { font-size:14px !important;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Blog **/
+@media screen and (max-width: 1024px) {
+	.blog img{ text-align:center;}
+	#intro-blog-img{ width:100%;}
+	#intro-blog{ clear:both; padding-bottom:20px;}
+	
+	.cols-1 {display: block;float: left !important;	margin: 0 !important;}
+	.cols-2 .column-1 {width:100%;float:left;}
+	.cols-2 .column-2 {width:100%;float:right;margin:0}
+	.cols-3 .column-1 {float:left;width:100%;padding:0px;margin-right:0px;}
+	.cols-3 .column-2 {float:left;width:100%;padding:0px;margin:0px;}
+	.cols-3 .column-3 {float:right;width:100%;padding:0px}
+	.cols-4 .column-1 {float:left;width:100%;padding:0px;margin-right:0px;}
+	.cols-4 .column-2 {float:left;width:100%;margin-left:0;padding:0px;margin:0px;}
+	.cols-4 .column-3 {float:right;width:100%;padding:0px}
+	.cols-4 .column-4 {float:right;width:100%;padding:0px}
+
+	.items-row {overflow: inherit;margin-bottom:10px !important;}
+
+	.column-2 {width:100%;margin-left:40%;}
+	.column-3 {width:100%}
+
+	.blog-more {padding:0px}
+.row-fluid .span12 {
+	width: 99.99999999%;
+	*width: 99.946808500638%;
+}
+.row-fluid .span11 {
+	width: 99.99999999%;
+	*width: 91.436170203638%;
+}
+.row-fluid .span10 {
+	width: 99.99999999%;
+	*width: 82.925531906638%;
+}
+.row-fluid .span9 {
+	width: 99.99999999%;
+	*width: 74.414893609638%;
+}
+.row-fluid .span8 {
+	width: 99.99999999%;
+	*width: 65.904255312638%;
+}
+.row-fluid .span7 {
+	width: 99.99999999%;
+	*width: 57.393617015638%;
+}
+.row-fluid .span6 {
+	width: 99.99999999%;
+	*width: 48.882978718638%;
+}
+.row-fluid .span5 {
+	width: 99.99999999%;
+	*width: 40.372340421638%;
+}
+.row-fluid .span4 {
+	width: 99.99999999%;
+	*width: 31.861702124638%;
+}
+.row-fluid .span3 {
+	width: 99.99999999%;
+	*width: 23.351063827638%;
+}
+.row-fluid .span2 {
+	width: 99.99999999%;
+	*width: 14.840425530638%;
+}
+.row-fluid .span1 {
+	width: 99.99999999%;
+	*width: 6.3297872336383%;
+}
+}
+/** End Blog **/

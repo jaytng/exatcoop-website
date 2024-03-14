@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+	<name>Maximenu CK</name>
+	<author>Cédric KEIFLIN</author>
+	<creationDate>January 2011</creationDate>
+	<copyright>Cédric KEIFLIN</copyright>
+	<license>GNU/GPL 3 https://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>https://www.joomlack.fr</authorUrl>
+	<version>10.1.4</version>
+	<description>MOD_MAXIMENUCK_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_maximenuck">mod_maximenuck.php</filename>
+		<folder>assets</folder>>
+		<folder>language</folder>
+		<folder>themes</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>logo.png</filename>
+		<filename>mod_maximenuck.xml</filename>
+		<filename>legacy.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_maximenuck.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_maximenuck.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_maximenuck.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_maximenuck.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_maximenuck/elements">
+				<field
+					name="maximenuckinterface"
+					type="maximenuckinterface"
+					/>
+				<field 
+					name="maximenuckversion" 
+					type="hidden"
+					default="9"
+					/>
+				<field 
+					name="infos" 
+					type="ckinfo"
+					/>
+				<field
+					name="infospro"
+					type="cklight"
+					/>
+				<field
+					name="joomlackproducts"
+					type="ckproducts"
+					/>
+				<field
+					name="v1tov2migration"
+					type="ckmigrate"
+					/>
+			</fieldset>
+			<fieldset name="editionfieldset" label="MOD_MAXIMENUCK_SOURCE_FIELDSET_LABEL">
+				<field
+					name="sourceproonly"
+					type="ckproonly"
+					label="MAXIMENUCK_SOURCE_PRO_ONLY"
+				/>
+				<field
+					name="source"
+					type="cksource"
+					default="slidesmanager"
+					label="MOD_MAXIMENUCK_SOURCE_LABEL"
+					description="MOD_MAXIMENUCK_SOURCE_DESC"
+				>
+					<option value="menu">MOD_MAXIMENUCK_SOURCE_MENU</option>
+					<option value="menubuilder">MOD_MAXIMENUCK_SOURCE_MENU_BUILDER</option>
+				</field>
+				<field
+					name="menusourcespacer"
+					type="maximenuckspacer"
+					label="MOD_MAXIMENUCK_SOURCE_MENU"
+					style="title"
+					showon="source:menu"
+				/>
+				<field
+					name="menutype"
+					type="ckmenu"
+					label="MOD_MAXIMENUCK_FIELD_MENUTYPE_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_MENUTYPE_DESC"
+					icon="text_list_numbers.png" 
+					showon="source:menu"
+				/>
+				<field
+					name="base"
+					type="menuitem"
+					label="MOD_MAXIMENUCK_FIELD_ACTIVE_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_ACTIVE_DESC"
+					icon="house.png"
+					showon="source:menu"
+					>
+					<option value="">JCURRENT</option>
+				</field>
+				<field
+					name="dependantitems"
+					type="maximenuckradio"
+					class="btn-group"
+					default="1"
+					label="MOD_MAXIMENUCK_DEPENDANT_LABEL"
+					description="MOD_MAXIMENUCK_DEPENDANT_DESC"
+					icon="chart_organisation.png" 
+					showon="source:menu"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="startLevel"
+					type="maximenucklist"
+					default="1"
+					label="MOD_MAXIMENUCK_FIELD_STARTLEVEL_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_STARTLEVEL_DESC"
+					icon="chart_organisation_add.png"
+					showon="source:menu,maximenu"
+				>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field
+					name="endLevel"
+					type="maximenucklist"
+					default="0"
+					label="MOD_MAXIMENUCK_FIELD_ENDLEVEL_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_ENDLEVEL_DESC"
+					icon="chart_organisation_delete.png"
+					showon="source:menu"
+				>
+					<option value="0">JALL</option>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field
+					name="menubuilderid"
+					type="ckmenubuilder"
+					label="MOD_MAXIMENUCK_FIELD_MENUTYPE_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_MENUTYPE_DESC"
+					icon="text_list_numbers.png" 
+					showon="source:menubuilder"
+				/>
+			</fieldset>
+
+			<fieldset name="effects" label="MOD_MAXIMENUCK_OPTIONS_EFFECTS">
+				<field
+					name="usejavascript"
+					type="maximenuckradio"
+					default="1"
+					label="MOD_MAXIMENUCK_USEJAVASCRIPT_LABEL"
+					description="MOD_MAXIMENUCK_USEJAVASCRIPT_DESC"
+					class="btn-group ">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="load"
+					type="maximenucklist"
+					default="domready"
+					label="MOD_MAXIMENUCK_LOADTYPE_LABEL"
+					description="MOD_MAXIMENUCK_LOADTYPE_DESC"
+					showon="usejavascript:1"
+					>
+					<option value="domready">domready</option>
+					<option value="load">load</option>
+				</field>
+				<field
+					name="effectckspacer1"
+					type="maximenuckspacer"
+					label="MOD_MAXIMENUCK_SPACER_EFFECTOPEN"
+					style="title"
+					showon="usejavascript:1"
+					/>
+				<field
+					name="stopdropdownlevel"
+					type="maximenucklist"
+					label="MOD_MAXIMENUCK_STOPDROPDOWNLEVEL_LABEL"
+					description="MOD_MAXIMENUCK_STOPDROPDOWNLEVEL_DESC"
+					default="0"
+					showon="usejavascript:1"
+					icon="text_list_numbers.png" >
+					<option value="0">JNO</option>
+					<option value="2">MOD_MAXIMENUCK_LEVEL2</option>
+					<option value="3">MOD_MAXIMENUCK_LEVEL3</option>
+					<option value="4">MOD_MAXIMENUCK_LEVEL4</option>
+					<option value="5">MOD_MAXIMENUCK_LEVEL5</option>
+				</field>
+				<field
+					name="menuposition"
+					type="maximenucklist"
+					default="0"
+					label="MOD_MAXIMENUCK_MENUPOSITION_LABEL"
+					description="MOD_MAXIMENUCK_MENUPOSITION_DESC"
+					icon="layout.png"
+					showon="usejavascript:1"
+				>
+					<option value="0">MOD_MAXIMENUCK_STANDARD</option>
+					<option value="topfixed">MOD_MAXIMENUCK_TOPFIXED</option>
+					<option value="bottomfixed">MOD_MAXIMENUCK_BOTTOMFIXED</option>
+				</field>
+				<field
+					name="fixedpositionwidth"
+					type="maximenucktext"
+					default=""
+					label="MOD_MAXIMENUCK_FIXED_MAXWIDTH_LABEL"
+					description="MOD_MAXIMENUCK_FIXED_MAXWIDTH_DESC"
+					icon="width.png"
+					showon="menuposition:topfixed,bottomfixed[AND]usejavascript:1"
+					suffix="" />
+				<field
+					name="topfixedoffset"
+					type="maximenucktext"
+					default=""
+					label="MOD_MAXIMENUCK_FIXED_OFFSET_LABEL"
+					description="MOD_MAXIMENUCK_FIXED_OFFSET_DESC"
+					icon="hourglass_add.png"
+					showon="menuposition:topfixed[AND]usejavascript:1"
+					suffix="" />
+				<field
+					name="topfixedeffect"
+					type="maximenuckradio"
+					default="1"
+					label="MOD_MAXIMENUCK_TOPFIXED_EFFECT_LABEL"
+					description="MOD_MAXIMENUCK_TOPFIXED_EFFECT_DESC"
+					icon="layers.png"
+					showon="menuposition:topfixed[AND]usejavascript:1"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="behavior"
+					type="maximenucklist"
+					default="mouseover"
+					label="MOD_MAXIMENUCK_STYLE_LABEL"
+					description="MOD_MAXIMENUCK_STYLE_DESC"
+					icon="mouse.png"
+					showon="usejavascript:1"
+				>
+					<option value="mouseover">MOD_MAXIMENUCK_MOOMENU</option>
+					<option value="click">MOD_MAXIMENUCK_CLICK</option>
+					<option value="clickclose">MOD_MAXIMENUCK_CLOSECLICK</option>
+				</field>
+				<field
+					name="clickclose"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_CLICKCLOSE_LABEL"
+					description="MOD_MAXIMENUCK_CLICKCLOSE_DESC"
+					icon="control_eject_blue.png"
+					class="btn-group"
+					showon="usejavascript:1[AND]behavior:clickclose[OR]behavior:click"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="closeclickoutside"
+					type="maximenuckradio"
+					default="0"
+					label="MAXIMENUCK_CLICKOUTSIDE_LABEL"
+					description="MAXIMENUCK_CLICKOUTSIDE_DESC"
+					icon="control_eject_blue.png"
+					class="btn-group"
+					showon="usejavascript:1[AND]behavior:click"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="clicktoggler"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_CLICKTOGGLER_LABEL"
+					description="MOD_MAXIMENUCK_CLICKTOGGLER_DESC"
+					icon="add.png"
+					class="btn-group"
+					showon="usejavascript:1[AND]behavior:click"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="opentype"
+					type="maximenucklist"
+					default="open"
+					label="MOD_MAXIMENUCK_OPENTYPE_LABEL"
+					description="MOD_MAXIMENUCK_OPENTYPE_DESC"
+					icon="door_open.png"
+					showon="usejavascript:1"
+				>
+					<option value="noeffect">MOD_MAXIMENUCK_NOEFFECT</option>
+					<option value="open">MOD_MAXIMENUCK_OPEN</option>
+					<option value="slide">MOD_MAXIMENUCK_SLIDE</option>
+					<option value="show">MOD_MAXIMENUCK_SHOW</option>
+					<option value="fade">MOD_MAXIMENUCK_FADE</option>
+					<option value="scale">MOD_MAXIMENUCK_SCALE</option>
+					<option value="puff">MOD_MAXIMENUCK_PUFF</option>
+					<option value="drop">MOD_MAXIMENUCK_DROP</option>
+					<option value="offcanvas">MAXIMENUCK_OFFCANVAS</option>
+				</field>
+				<field
+					name="offcanvaswidth"
+					type="maximenucktext"
+					default="300"
+					label="MAXIMENUCK_OFFCANVAS_WARNING_LABEL"
+					description="MAXIMENUCK_OFFCANVAS_WARNING_DESC"
+					icon="width.png"
+					showon="usejavascript:1[AND]opentype:offcanvas"
+					/>
+				<field
+					name="fxduration"
+					type="maximenucktext"
+					default="500"
+					label="MOD_MAXIMENUCK_MOODUREE_LABEL"
+					description="MOD_MAXIMENUCK_MOODUREE_DESC"
+					icon="hourglass.png"
+					showon="usejavascript:1"
+					suffix="ms" />
+
+				<field
+					name="fxtransition"
+					type="maximenucklist"
+					default="linear"
+					label="MOD_MAXIMENUCK_TRANSITION_LABEL"
+					description="MOD_MAXIMENUCK_TRANSITION_DESC"
+					showon="usejavascript:1"
+					icon="chart_curve.png">
+					<option value="linear">Linear</option>
+					<option value="jswing">jswing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+
+				<field
+					name="dureein"
+					type="maximenucktext"
+					default="0"
+					label="MOD_MAXIMENUCK_DUREEIN_LABEL"
+					description="MOD_MAXIMENUCK_DUREEIN_DESC"
+					icon="hourglass.png"
+					showon="usejavascript:1"
+					suffix="ms" />
+				<field
+					name="dureeout"
+					type="maximenucktext"
+					default="500"
+					label="MOD_MAXIMENUCK_DUREEOUT_LABEL"
+					description="MOD_MAXIMENUCK_DUREEOUT_DESC"
+					icon="hourglass.png"
+					showon="usejavascript:1"
+					suffix="ms" />
+
+				<field
+					name="testoverflow"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_TESTOVERFLOW_LABEL"
+					description="MOD_MAXIMENUCK_TESTOVERFLOW_DESC"
+					icon="shape_handles.png"
+					showon="usejavascript:1"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="direction"
+					type="maximenuckradio"
+					default="normal"
+					label="MOD_MAXIMENUCK_DIRECTION_LABEL"
+					description="MOD_MAXIMENUCK_DIRECTION_DESC"
+					icon="arrow_direction.png"
+					class="btn-group"
+					showon="usejavascript:1"
+				>
+					<option value="normal">MOD_MAXIMENUCK_NORMAL</option>
+					<option value="inverse">MOD_MAXIMENUCK_INVERSE</option>
+				</field>
+
+				<field
+					name="directionoffset1"
+					type="maximenucktext"
+					default="30"
+					label="MOD_MAXIMENUCK_DIRECTIONOFFSET1_LABEL"
+					description="MOD_MAXIMENUCK_DIRECTIONOFFSET1_DESC"
+					icon="shape_align_right.png"
+					showon="usejavascript:1"
+					suffix="px" />
+
+				<field
+					name="directionoffset2"
+					type="maximenucktext"
+					default="30"
+					label="MOD_MAXIMENUCK_DIRECTIONOFFSET2_LABEL"
+					description="MOD_MAXIMENUCK_DIRECTIONOFFSET2_DESC"
+					icon="shape_align_right.png"
+					showon="usejavascript:1"
+					suffix="px" />
+				<field
+					name="showactivesubitems"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_SHOWACTIVESUBITEMS_LABEL"
+					description="MOD_MAXIMENUCK_SHOWACTIVESUBITEMS_DESC"
+					class="btn-group"
+					showon="usejavascript:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="mootoolsckspacer2"
+					type="maximenuckspacer"
+					label="MOD_MAXIMENUCK_SPACER_MOOTOOLSFANCY"
+					showon="usejavascript:1"
+					style="title" />
+
+				<field
+					name="usefancy"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_USEFANCY_LABEL"
+					description="MOD_MAXIMENUCK_USEFANCY_DESC"
+					class="btn-group"
+					showon="usejavascript:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="fancyduration"
+					type="maximenucktext"
+					default="500"
+					label="MOD_MAXIMENUCK_FANCYDUREE_LABEL"
+					description="MOD_MAXIMENUCK_FANCYDUREE_DESC"
+					icon="hourglass.png"
+					showon="usejavascript:1"
+					suffix="ms"/>
+
+				<field
+					name="fancytransition"
+					type="maximenucklist"
+					default="linear"
+					label="MOD_MAXIMENUCK_FANCYTRANSITION_LABEL"
+					description="MOD_MAXIMENUCK_FANCYTRANSITION_DESC"
+					showon="usejavascript:1"
+					icon="chart_curve.png">
+					<option value="linear">Linear</option>
+					<option value="jswing">jswing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset name="styles" label="MOD_MAXIMENUCK_OPTIONS_STYLES">
+				<field
+					name="spacerdisplay"
+					type="maximenuckspacer"
+					label="MAXIMENUCK_DISPLAY_OPTIONS_LABEL"
+					style="title"
+					/>
+				<field
+					name="theme"
+					type="ckthemeslist"
+					directory="modules/mod_maximenuck/themes"
+					hide_default="true"
+					default="mega9"
+					label="MOD_MAXIMENUCK_THEME_LABEL"
+					description="MOD_MAXIMENUCK_THEME_DESC"
+					exclude="custom"
+					icon="photo.png" />
+				<field
+					name="styles"
+					type="ckstyle"
+					label="MOD_MAXIMENUCK_SELECT_STYLE_LABEL"
+					description="MOD_MAXIMENUCK_SELECT_STYLE_DESC"
+					icon="palette.png"
+					default=""
+					/>
+				<field
+					name="orientation"
+					type="maximenuckradio"
+					default="horizontal"
+					label="MOD_MAXIMENUCK_ORIENTATION_LABEL"
+					description="MOD_MAXIMENUCK_ORIENTATION_DESC"
+					icon="shape_rotate_clockwise.png"
+					class="btn-group"
+				>
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
+				</field>
+				<field
+					name="spacerdisplay2"
+					type="maximenuckspacer"
+					label="MAXIMENUCK_CSS_OPTIONS_LABEL"
+					style="title"
+					/>
+				<field
+					name="loadcompiledcss"
+					type="maximenuckradio"
+					default="2"
+					label="MOD_MAXIMENUCK_LOADCOMPILEDCSS_LABEL"
+					description="MOD_MAXIMENUCK_LOADCOMPILEDCSS_DESC" 
+					class="btn-group" >
+					<option	value="1">JYES</option>
+					<option	value="0">JNO</option>
+					<option	value="2">MOD_MAXIMENUCK_COMPILE</option>
+				</field>
+				<field
+					name="menustyles"
+					identifier="menustyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_MENUSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_MENUSTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level1itemnormalstyles"
+					identifier="level1itemnormalstyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL1ITEMNORMALSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL1ITEMNORMALSTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level1itemnormalstylesicon"
+					identifier="level1itemnormalstylesicon"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level1itemhoverstylesicon"
+					identifier="level1itemhoverstylesicon"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level1itemhoverstyles"
+					identifier="level1itemhoverstyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL1ITEMHOVERSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL1ITEMHOVERSTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level1itemactivestyles"
+					identifier="level1itemactivestyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL1ITEMACTIVESTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL1ITEMACTIVESTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level1itemparentstyles"
+					identifier="level1itemparentstyles"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level2menustyles"
+					identifier="level2menustyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL2MENUSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL2MENUSTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level2itemnormalstyles"
+					identifier="level2itemnormalstyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL2ITEMNORMALSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL2ITEMNORMALSTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level2itemnormalstylesicon"
+					identifier="level2itemnormalstylesicon"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level2itemhoverstylesicon"
+					identifier="level2itemhoverstylesicon"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level2itemhoverstyles"
+					identifier="level2itemhoverstyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL2ITEMHOVERSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL2ITEMHOVERSTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level2itemactivestyles"
+					identifier="level2itemactivestyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_LEVEL2ITEMACTIVESTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_LEVEL2ITEMACTIVESTYLES_DESC"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level3menustyles"
+					identifier="level3menustyles"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level3itemnormalstyles"
+					identifier="level3itemnormalstyles"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="level3itemhoverstyles"
+					identifier="level3itemnormalstyles"
+					type="hidden"
+					icon=""
+					filter="raw" 
+					default="[]" />
+				<field
+					name="headingstyles"
+					identifier="headingstyles"
+					type="hidden"
+					label="MOD_MAXIMENUCK_FIELD_HEADINGSTYLES_LABEL"
+					description="MOD_MAXIMENUCK_FIELD_HEADINGSTYLES_DESC"
+					icon=""
+					filter="raw"
+					default="[]" />
+				<field
+					name="fancystyles"
+					identifier="headingstyles"
+					type="hidden"
+					filter="raw"
+					default="[]" />
+				<field
+					name="customcss"
+					identifier="customcss"
+					type="hidden"
+					label=""
+					description=""
+					icon=""
+					filter="raw"
+					default="" />
+			</fieldset>
+
+			<fieldset name="logooptions" label="MOD_MAXIMENUCK_OPTIONS_LOGO">
+				<field
+					name="logoimage"
+					type="media"
+					icon="image.png"
+					label="MOD_MAXIMENUCK_LOGOIMAGE_LABEL"
+					description="MOD_MAXIMENUCK_LOGOIMAGE_DESC" />
+				<field
+					name="logolink"
+					type="maximenucktext"
+					icon="link_go.png"
+					label="MOD_MAXIMENUCK_LOGOLINK_LABEL"
+					description="MOD_MAXIMENUCK_LOGOLINK_DESC" />
+				<field
+					name="logoalt"
+					type="maximenucktext"
+					icon="font.png"
+					label="MOD_MAXIMENUCK_LOGOALT_LABEL"
+					description="MOD_MAXIMENUCK_LOGOALT_DESC" />
+				<field
+					name="logoposition"
+					type="maximenucklist"
+					default="left"
+					label="MOD_MAXIMENUCK_LOGOPOSITION_LABEL"
+					description="MOD_MAXIMENUCK_LOGOPOSITION_DESC"
+					icon="arrow_direction.png"
+				>
+					<option value="left">MOD_MAXIMENUCK_LEFT</option>
+					<option value="center">MOD_MAXIMENUCK_CENTER</option>
+					<option value="right">MOD_MAXIMENUCK_RIGHT</option>
+					<option value="top">MOD_MAXIMENUCK_TOP</option>
+				</field>
+				<field
+					name="logopositionpartition"
+					type="maximenucklist"
+					default="even"
+					label="MOD_MAXIMENUCK_LOGOPOSITION_PARTITION_LABEL"
+					description="MOD_MAXIMENUCK_LOGOPOSITION_PARTITION_DESC"
+					icon="document-binary.png"
+					showon="logoposition:center"
+				>
+					<option value="even">MOD_MAXIMENUCK_EVEN</option>
+					<option value="odd">MOD_MAXIMENUCK_ODD</option>
+				</field>
+				<field
+					name="logowidth"
+					type="maximenucktext"
+					label="MOD_MAXIMENUCK_LOGOWIDTH_LABEL"
+					description="MOD_MAXIMENUCK_LOGOWIDTH_DESC"
+					icon="width.png"
+					suffix="px"
+				/>
+				<field
+					name="logoheight"
+					type="maximenucktext"
+					label="MOD_MAXIMENUCK_LOGOHEIGHT_LABEL"
+					description="MOD_MAXIMENUCK_LOGOHEIGHT_DESC"
+					icon="height.png"
+					suffix="px"
+				/>
+				<field
+					name="logomargintop"
+					type="maximenucktext"
+					default="0"
+					label="MOD_MAXIMENUCK_MARGINTOP_LABEL"
+					description="MOD_MAXIMENUCK_MARGINTOP_DESC"
+					icon="margin_top.png"
+					suffix="px"
+				/>
+				<field
+					name="logomarginright"
+					type="maximenucktext"
+					default="0"
+					label="MOD_MAXIMENUCK_MARGINRIGHT_LABEL"
+					description="MOD_MAXIMENUCK_MARGINRIGHT_DESC"
+					icon="margin_right.png"
+					suffix="px"
+				/>
+				<field
+					name="logomarginbottom"
+					type="maximenucktext"
+					default="0"
+					label="MOD_MAXIMENUCK_MARGINBOTTOM_LABEL"
+					description="MOD_MAXIMENUCK_MARGINBOTTOM_DESC"
+					icon="margin_bottom.png"
+					suffix="px"
+				/>
+				<field
+					name="logomarginleft"
+					type="maximenucktext"
+					default="0"
+					label="MOD_MAXIMENUCK_MARGINLEFT_LABEL"
+					description="MOD_MAXIMENUCK_MARGINLEFT_DESC"
+					icon="margin_left.png"
+					suffix="px"
+				/>
+			</fieldset>
+			<fieldset name="maximenu_mobileparams" label="MOD_MAXIMENUCK_MOBILEPARAMS_FIELDSET_LABEL">
+				<field
+					name="menuparamsinfo"
+					label="MOD_MAXIMENUCK_CHECKPLUGINMOBILE"
+					type="cktestmobile"
+					style="link"
+					icon="information.png"
+				/>
+				<field
+					name="maximenumobile_resolution"
+					type="maximenucktext"
+					label="MAXIMENUCK_MOBILERESOLUTION_LABEL"
+					description="MAXIMENUCK_MOBILERESOLUTION_DESC"
+					icon="width.png"
+					suffix="px"
+					default="640"
+				/>
+				<field
+					name="maximenumobile_enable"
+					type="maximenuckradio"
+					class="btn-group"
+					default="1"
+					label="MOD_MAXIMENUCK_USEMOBILEBURGERICON_LABEL"
+					description="MOD_MAXIMENUCK_USEMOBILEBURGERICON_DESC"
+					icon="ipod.png">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					class="custom-select"
+					icon="layout.png" />
+				<field
+					name="zindexlevel"
+					type="maximenucktext"
+					default="10"
+					label="MOD_MAXIMENUCK_ZINDEXLEVEL_LABEL"
+					description="MOD_MAXIMENUCK_ZINDEXLEVEL_DESC"
+					icon="shape_move_front.png" />
+				<field
+					name="isv9"
+					type="cktestv9"
+					default="1"
+					label="MOD_MAXIMENUCK_ISV9_LABEL"
+					description="MOD_MAXIMENUCK_ISV9_DESC"
+					class="btn-group"
+					>
+					<option value="0">MAXIMENUCK_VERSION8</option>
+					<option value="1">MAXIMENUCK_VERSION10</option>
+				</field>
+				<field
+					name="datahover"
+					type="maximenuckradio"
+					default="1"
+					label="MOD_MAXIMENUCK_DATAHOVER_LABEL"
+					description="MOD_MAXIMENUCK_DATAHOVER_DESC"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="microdata"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_MICRODATA_LABEL"
+					description="MOD_MAXIMENUCK_MICRODATA_DESC"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="menuid"
+					type="maximenucktext"
+					default=""
+					label="MOD_MAXIMENUCK_ID_LABEL"
+					description="MOD_MAXIMENUCK_ID_DESC"
+					icon="textfield_key.png"
+					filter="string"
+				/>
+				<field
+					name="class_sfx"
+					type="maximenucktext"
+					label="MOD_MAXIMENUCK_CLASS_SUFFIX_LABEL"
+					icon="text_signature.png"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="maximenucktext"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					icon="text_signature.png" />
+				<field
+					name="cache"
+					type="maximenucklist"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					>
+					<option	value="1">JGLOBAL_USE_GLOBAL</option>
+					<option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="maximenucktext"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					icon="hourglass.png"
+					suffix="min" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static" >
+					<option	value="static"></option>
+				</field>
+				<field
+					name="ckspaceradvancedicons"
+					type="maximenuckspacer"
+					label="MAXIMENUCK_SPACER_ICONS"
+					style="title" />
+				<field
+					name="useicons"
+					type="maximenuckradio"
+					default="1"
+					label="MAXIMENUCK_USE_ICONS_LABEL"
+					icon="switch.png"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="fontawesomeversion"
+					type="maximenucklist"
+					default="5"
+					label="MAXIMENUCK_FONTWESOME_VERSION_LABEL"
+					description="MAXIMENUCK_FONTWESOME_VERSION_DESC"
+					icon="text_padding_left.png"
+					showon="useicons:1"
+				>
+					<option value="5">MAXIMENUCK_FONTWESOME_VERSION_5</option>
+					<option value="4">MAXIMENUCK_FONTWESOME_VERSION_4</option>
+					<option value="0">JNONE</option>
+				</field>
+				<field
+					name="loadfontawesomescript"
+					type="maximenuckradio"
+					default="1"
+					label="MAXIMENUCK_LOADFONTWESOME_SCRIPT_LABEL"
+					description="MAXIMENUCK_LOADFONTWESOME_SCRIPT_DESC"
+					icon="switch.png"
+					class="btn-group"
+					showon="fontawesomeversion:4,5[AND]useicons:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="ckspaceradvanced1"
+					type="maximenuckspacer"
+					label="MOD_MAXIMENUCK_SPACER_IMAGES"
+					style="title" />
+
+				<field
+					name="useimages"
+					type="maximenuckradio"
+					default="1"
+					label="MAXIMENUCK_USE_IMAGES_LABEL"
+					icon="switch.png"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="imagerollprefix"
+					type="maximenucktext"
+					default="_hover"
+					label="MOD_MAXIMENUCK_ROLLOVERPREFIX_LABEL"
+					description="MOD_MAXIMENUCK_ROLLOVERPREFIX_DESC"
+					icon="text_signature.png" 
+					showon="useimages:1"
+				/>
+
+				<field
+					name="imageactiveprefix"
+					type="maximenucktext"
+					default="_active"
+					label="MOD_MAXIMENUCK_ACTIVEPREFIX_LABEL"
+					description="MOD_MAXIMENUCK_ACTIVEPREFIX_DESC"
+					icon="text_signature.png" 
+					showon="useimages:1"
+				/>
+
+				<field
+					name="imageonly"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_IMAGEONLY_LABEL"
+					description="MOD_MAXIMENUCK_IMAGEONLY_DESC"
+					icon="image.png"
+					class="btn-group"
+					showon="useimages:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="menu_images_align"
+					type="maximenucklist"
+					default="top"
+					label="MOD_MAXIMENUCK_IMAGEALIGN_LABEL"
+					description="MOD_MAXIMENUCK_IMAGEALIGN_DESC"
+					icon="text_padding_left.png"
+					showon="useimages:1"
+				>
+					<option value="default">MOD_MAXIMENUCK_DEFAULT</option>
+					<option value="top">MOD_MAXIMENUCK_TOP</option>
+					<option value="bottom">MOD_MAXIMENUCK_BOTTOM</option>
+					<option value="lefttop">MOD_MAXIMENUCK_LEFTTOP</option>
+					<option value="leftmiddle">MOD_MAXIMENUCK_LEFTMIDDLE</option>
+					<option value="leftbottom">MOD_MAXIMENUCK_LEFTBOTTOM</option>
+					<option value="righttop">MOD_MAXIMENUCK_RIGHTTOP</option>
+					<option value="rightmiddle">MOD_MAXIMENUCK_RIGHTMIDDLE</option>
+					<option value="rightbottom">MOD_MAXIMENUCK_RIGHTBOTTOM</option>
+				</field>
+				<field
+					name="ckspaceradvancedaccessibilty"
+					type="maximenuckspacer"
+					label="MAXIMENUCK_ACCESSIBILITY"
+					style="title" />
+				<field
+					name="enable_accessibility_focus"
+					type="maximenuckradio"
+					default="0"
+					label="MOD_MAXIMENUCK_ENABLE_FOCUS_LABEL"
+					description="MOD_MAXIMENUCK_ENABLE_FOCUS_DESC"
+					icon="book_open.png"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="accessibilty_border_color"
+					type="maximenuckcolor"
+					default="#ff0000"
+					label="MAXIMENUCK_FOCUS_COLOR_LABEL"
+					desc="MAXIMENUCK_FOCUS_COLOR_DESC"
+					showon="enable_accessibility_focus:1"
+					 />
+				<field
+					name="ckspaceradvanced2"
+					type="maximenuckspacer"
+					label="MAXIMENUCK_OTHER"
+					style="title" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

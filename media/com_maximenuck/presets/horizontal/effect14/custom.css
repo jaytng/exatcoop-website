@@ -1,0 +1,64 @@
+|ID| .level1 {
+	vertical-align: top;
+	position: relative !important;
+        height: 45px;
+}
+
+|ID| .level1:before,
+|ID| .level1:after {
+	position: absolute;
+	width: 45px;
+	height: 2px;
+	background: #fff;
+	content: '';
+	opacity: 0.2;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	pointer-events: none;
+}
+
+|ID| .level1:before {
+	top: 0;
+	left: 0;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transform-origin: 2px 0;
+	-moz-transform-origin: 2px 0;
+	transform-origin: 2px 0;
+}
+
+|ID| .level1:after {
+	right: 0;
+	bottom: 0;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transform-origin: 100% 0;
+	-moz-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+}
+
+|ID| .level1:hover::before,
+|ID| .level1:hover::after,
+|ID| .level1:focus::before,
+|ID| .level1:focus::after {
+	opacity: 1;
+}
+
+|ID| .level1:hover::before,
+|ID| .level1:focus::before {
+	left: 50%;
+	-webkit-transform: rotate(0deg) translateX(-50%);
+	-moz-transform: rotate(0deg) translateX(-50%);
+	transform: rotate(0deg) translateX(-50%);
+}
+
+|ID| .level1:hover::after,
+|ID| .level1:focus::after {
+	right: 50%;
+	-webkit-transform: rotate(0deg) translateX(50%);
+	-moz-transform: rotate(0deg) translateX(50%);
+	transform: rotate(0deg) translateX(50%);
+}

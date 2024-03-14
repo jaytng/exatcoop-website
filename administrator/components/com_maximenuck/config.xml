@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="general"
+		label="COM_MAXIMENUCK_GENERAL_LABEL"
+		description="COM_MAXIMENUCK_GENERAL_DESC"
+	>
+		<field
+			name="imagespath"
+			type="text"
+			label="COM_MAXIMENUCK_IMAGES_PATH_LABEL"
+			description="COM_MAXIMENUCK_IMAGES_PATH_DESC"
+			default="images"
+		/>
+	</fieldset>
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+		>
+
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			filter="rules"
+			validate="rules"
+			component="com_maximenuck"
+			section="component" />
+	</fieldset>
+</config>

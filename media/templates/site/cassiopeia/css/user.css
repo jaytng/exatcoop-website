@@ -1,0 +1,9 @@
+.card-header {
+    padding: var(--card-cap-padding-y)var(--card-cap-padding-x);
+    color: var(--card-cap-color);
+    background-color: var(--card-cap-bg);
+    border-bottom: var(--card-border-width)solid var(--card-border-color);
+    margin-bottom: 0;
+    color: green;
+  
+}

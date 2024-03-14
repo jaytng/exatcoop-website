@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_maximenuck</name>
+	<ckpro>0</ckpro>
+	<variant>free</variant>
+	<creationDate>July 2014</creationDate>
+	<copyright>Copyright (C) 2020. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<author>Cedric Keiflin</author>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>https://www.joomlack.fr</authorUrl>
+	<version>10.1.4</version>
+	<description>MAXIMENUCK_DESC</description>
+	<scriptfile>install.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> 
+		<schemas> 
+			<schemapath type="mysql">sql/updates</schemapath> 
+		</schemas> 
+	</update>
+	<files folder="site">
+		<folder>helpers</folder>
+		<folder>language</folder>
+		<filename>controller.php</filename>
+		<filename>maximenuck.php</filename>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/en-GB.com_maximenuck.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_maximenuck.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.com_maximenuck.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.com_maximenuck.sys.ini</language>
+	</languages>
+	<media folder="media" destination="com_maximenuck">
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>fonts</folder>
+		<folder>images</folder>
+		<folder>presets</folder>
+		<folder>webfonts</folder>
+	</media>
+	<administration>
+		<menu>Maximenu CK</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_maximenuck&amp;view=modules"
+				view="modules" img="class:maximenuck-modules" alt="Maximenu CK/Modules">COM_MAXIMENUCK_MODULES</menu>
+			<menu link="option=com_maximenuck&amp;view=joomlamenus"
+				view="joomlamenus" img="class:maximenuck-joomlamenus" alt="Maximenu CK/Joomlamenus">COM_MAXIMENUCK_JOOMLA_MENUS</menu>
+			<menu link="option=com_maximenuck&amp;view=styles"
+				view="styles" img="class:maximenuck-styles" alt="Maximenu CK/Styles">COM_MAXIMENUCK_STYLES</menu>
+			<menu link="option=com_maximenuck&amp;view=menubuilders"
+				view="menubuilders" img="class:maximenuck-menubuilders" alt="Maximenu CK/Menubuilders">COM_MAXIMENUCK_MENU_BUILDERS</menu>
+				<menu link="option=com_maximenuck&amp;view=about"
+				view="about" img="class:maximenuck-about" alt="Maximenu CK/About">COM_MAXIMENUCK_ABOUT</menu>
+		</submenu>  
+		<files folder="administrator">
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>export</folder>
+			<folder>extensions</folder>
+			<folder>helpers</folder>
+			<folder>interfaces</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>maximenuck.php</filename>
+		</files>
+		<languages folder="administrator">
+			<language tag="en-GB">language/en-GB/en-GB.com_maximenuck.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_maximenuck.sys.ini</language>
+		</languages>
+	</administration>
+	<updateservers>
+		<server type="extension" priority="1" name="Maximenu CK Light">https://update.joomlack.fr/maximenuck_light_update.xml</server>
+	</updateservers>
+</extension>

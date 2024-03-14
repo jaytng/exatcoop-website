@@ -1,0 +1,33 @@
+|ID| .level1 {
+	vertical-align: top;
+	position: relative !important;
+	overflow: hidden;
+}
+
+|ID| .level1 > a {
+	position: relative;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+        color: #fff;
+}
+
+|ID| .level1 > a:before {
+	position: absolute;
+	left: 0;
+	padding: inherit;
+	top: 100%;
+	content: attr(data-hover);
+	color: inherit;
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+|ID| .level1:hover > a,
+|ID| .level1 > a:focus {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}

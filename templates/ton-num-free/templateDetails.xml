@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 3.8//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>TON-NUM-Free</name>
+	<creationDate>01-03-2020</creationDate>
+	<author>HITZtheme</author>
+	<authorEmail>hitztheme@hotmail.com</authorEmail>
+	<authorUrl>https://www.hitztheme.com/</authorUrl>
+	<copyright>HITZtheme 2020</copyright>
+	<license></license>
+	<version>1.0</version>
+	<description>
+		<![CDATA[<div style="text-align:left"><span style="font-weight:bold;font-size:1.1em;color:#000">---  TON-NUM Free ---<br /><hr style="border:0;color:rgb(226,226,226);background-color:rgb(226,226,226);height:1px" />ลิขสิทธิเทมเพลต เป็นของ HITZtheme<br />เทมเพลตออกแบบโดย hitztheme.com <br /><span style="color: #e70000">ดูรายละเอียดเพิ่มเติมได้ที่ <a href="https://www.hitztheme.com/" target="_blank">www.hitztheme.com</a></span>.<br /><br />Position Layout:<br />	</span>
+		<br /> ดูได้จากคู่มือออนไลน์ที่เว็บไซต์ <a href="https://hitztheme.com/getting-started/introduction" target="_blank">hitztheme.com/getting-started/introduction</a>
+		
+		
+		</div>]]>
+	</description>
+	<files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>fonts</folder>
+		<folder>js</folder>
+		<filename>component.php</filename>
+		<filename>index.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<positions>
+		<position>debug</position>
+		<position>logo</position>
+		<position>menu</position>
+		<position>social</position>
+		<position>slide</position>
+		<position>recommend</position>
+		<position>author</position>
+		<position>banner</position>
+		<position>gallery</position>
+		<position>map</position>
+		<position>contact-form</position>
+		<position>footer</position>
+		<position>breadcrumbs</position>
+		<position>right-module</position>
+		<position>contact</position>
+		<position>copyright</position>
+		<position>map</position>
+	</positions>
+
+
+<config>
+		<fields name="params">
+		
+		</fields>
+	</config>
+	
+</extension>
